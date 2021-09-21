@@ -34,7 +34,7 @@ def main():
     with Alty:
         while True:
             print("💬 [INFO] Starting To Check Uptime..")
-            TEXT = f"<b>👾 @{UPDATE_CHANNEL} Our Bot's Status (Updating Every  {round(TIME / 60)} Hours)</b>\n\n<b>📜 BOTS :</b>\n\n"
+            TEXT = f"<b>🤖 @{UPDATE_CHANNEL}'s Bot Status (Updating Every  {round(TIME / 60)} Hours)</b>\n\n<b>📜 BOTS :</b>\n\n"
 
             for bot in BOTS:
                 print(f"💬 [INFO] Checking @{bot}")
@@ -45,7 +45,7 @@ def main():
 
                 if x.message_id == msg.message_id:
                     print(f"⚠️ [WARNING] @{bot} Is Down")
-                    TEXT += f"❌ - @{bot}\n"
+                    TEXT += f" 😴- @{bot}\n"
                     Alty.send_message(BOT_OWNER, f"❌ - @{bot} IS DOWN !")
                 else:
                     print(f"☑ [INFO] All Good With @{bot}")
@@ -59,7 +59,7 @@ def main():
 
             Alty.edit_message_text(UPDATE_CHANNEL, STATUS_MESSAGE_ID, text=TEXT, disable_web_page_preview=True, parse_mode="html")
             print(f"[INFO] Everything Done! Sleeping For {round(TIME / 60)} Hours...")
-            time.sleep(TIME * 60)
+            time.sleep(TIME 6 * 60)
 
 
 main()
